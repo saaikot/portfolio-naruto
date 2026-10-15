@@ -1,0 +1,45 @@
+export const categories = [
+  { id: "all", label: "All" },
+  { id: "web", label: "Web" },
+  { id: "app", label: "App" },
+  { id: "design", label: "Design" },
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Portfolio Website",
+    category: "web",
+    description: "Naruto-themed portfolio built with Next.js 16.",
+    image: "",
+    tags: ["Next.js", "Tailwind", "Framer Motion"],
+    github: "https://github.com/your-username/portfolio-naruto",
+    demo: "https://your-portfolio.vercel.app",
+    featured: true,
+    year: "2025",
+  },
+  {
+    id: 2,
+    title: "E-Commerce App",
+    category: "web",
+    description: "Full-stack e-commerce with Stripe payments.",
+    image: "",
+    tags: ["Next.js", "MongoDB", "Stripe"],
+    github: "https://github.com/your-username/ecommerce",
+    demo: "",
+    featured: false,
+    year: "2024",
+  },
+  {
+    id: 3,
+    title: "Task Manager",
+    category: "app",
+    description: "Realtime task manager with drag & drop.",
+    image: "",
+    tags: ["React", "Firebase"],
+    github: "https://github.com/your-username/task-app",
+    demo: "",
+    featured: false,
+    year: "2024",
+  },
+];

@@ -1,0 +1,42 @@
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPrisma,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiFigma,
+} from "react-icons/si";
+
+export const iconMap: Record<
+  string,
+  React.ComponentType<{ size?: number; className?: string }>
+> = {
+  SiHtml5,
+  SiCss3: SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPrisma,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiFigma,
+};
