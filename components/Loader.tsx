@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { profile } from "@/data/profile";
 
 export default function Loader() {
   const [done, setDone] = useState(false);
@@ -28,7 +27,6 @@ export default function Loader() {
         >
           {/* Rasengan orb */}
           <div className="relative flex h-40 w-40 items-center justify-center">
-            {/* Outer glow */}
             <motion.div
               className="absolute inset-0 rounded-full"
               style={{
@@ -39,7 +37,6 @@ export default function Loader() {
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
             />
 
-            {/* Ring 1 — outer, slow */}
             <motion.div
               className="absolute h-36 w-36 rounded-full border-2 border-blue-400/60"
               style={{
@@ -50,7 +47,6 @@ export default function Loader() {
               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             />
 
-            {/* Ring 2 — middle, reverse */}
             <motion.div
               className="absolute h-28 w-28 rounded-full border border-cyan-300/70"
               style={{ borderStyle: "dotted" }}
@@ -58,7 +54,6 @@ export default function Loader() {
               transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
             />
 
-            {/* Ring 3 — inner, fast */}
             <motion.div
               className="absolute h-20 w-20 rounded-full border-2 border-blue-300"
               style={{
@@ -70,7 +65,6 @@ export default function Loader() {
               transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
             />
 
-            {/* Center core */}
             <motion.div
               className="relative flex h-14 w-14 items-center justify-center rounded-full"
               style={{
@@ -87,7 +81,6 @@ export default function Loader() {
               </span>
             </motion.div>
 
-            {/* Chakra particles orbiting */}
             {[0, 1, 2, 3, 4, 5].map((i) => {
               const angle = (i / 6) * 360;
               const rad = (angle * Math.PI) / 180;
@@ -114,7 +107,6 @@ export default function Loader() {
             })}
           </div>
 
-          {/* Loading bar */}
           <div className="mt-12 h-[3px] w-56 overflow-hidden rounded-full bg-line">
             <motion.div
               className="h-full rounded-full"
@@ -127,12 +119,10 @@ export default function Loader() {
             />
           </div>
 
-          {/* Loading text */}
           <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.4em] text-muted">
             charging chakra
           </p>
 
-          {/* Kanji subtitle */}
           <p className="mt-2 font-jp text-xs tracking-[0.3em] text-naruto">
             忍 者 の 道
           </p>

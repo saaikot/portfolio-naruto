@@ -13,18 +13,19 @@
   --color-line: rgba(255, 122, 0, 0.18);
 
   /* Naruto palette */
-  --color-naruto: #ff7a00;    /* Naruto orange */
-  --color-chakra: #ffd60a;    /* Chakra gold */
-  --color-leaf: #2d7a3e;      /* Leaf green */
-  --color-rasengan: #1e3a8a;  /* Rasengan blue */
-  --color-akatsuki: #c8102e;  /* Akatsuki red */
-  --color-sage: #dc2626;      /* Sage mode marks */
+  --color-naruto: #ff7a00;
+  --color-chakra: #ffd60a;
+  --color-leaf: #2d7a3e;
+  --color-rasengan: #1e3a8a;
+  --color-akatsuki: #c8102e;
+  --color-sage: #dc2626;
 
-  /* Fonts */
+  /* Fonts — ✅ FIXED (no circular ref) */
   --font-display: var(--font-russo), system-ui, sans-serif;
   --font-jp: var(--font-noto-jp), system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
+  --font-marker: "Permanent Marker", cursive;
 
   /* Radii */
   --radius-ninja: 6px;
@@ -41,20 +42,16 @@
 /* ============================================================
    KEYFRAMES
    ============================================================ */
-
-/* Rasengan orb spin */
 @keyframes rasengan-spin {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Chakra pulse — for glows */
 @keyframes chakra-pulse {
   0%, 100% { opacity: 0.45; transform: scale(1); }
   50%      { opacity: 0.85; transform: scale(1.08); }
 }
 
-/* Falling leaf (background) */
 @keyframes leaf-fall {
   0% {
     transform: translateY(-10vh) translateX(0) rotate(0deg);
@@ -68,33 +65,28 @@
   }
 }
 
-/* Kunai glint */
 @keyframes kunai-glint {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50%      { opacity: 1; transform: scale(1.15); }
 }
 
-/* Shuriken spin — fast */
 @keyframes shuriken-spin {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Chakra swirl drift */
 @keyframes chakra-swirl {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33%      { transform: translate(80px, -60px) scale(1.15); }
   66%      { transform: translate(-60px, 80px) scale(0.9); }
 }
 
-/* Text flicker like old scroll */
 @keyframes scroll-flicker {
   0%, 100%      { opacity: 1; }
   48%, 52%      { opacity: 1; }
   50%           { opacity: 0.7; }
 }
 
-/* Horizontal scan (for kunai-array line) */
 @keyframes scan-x {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
@@ -134,14 +126,15 @@ body {
    UTILITY CLASSES
    ============================================================ */
 
-/* Chakra card — glass panel with orange glow */
 @utility chakra-card {
   background: linear-gradient(180deg, #14100a 0%, #0e0b06 100%);
   border: 1px solid rgba(255, 122, 0, 0.25);
   border-radius: 10px;
   position: relative;
   transition: all 0.3s ease;
+}
 
+@utility chakra-card-hover {
   &:hover {
     border-color: rgba(255, 122, 0, 0.6);
     box-shadow:
@@ -150,7 +143,6 @@ body {
   }
 }
 
-/* Scroll paper — ancient look */
 @utility scroll-paper {
   background:
     linear-gradient(180deg, rgba(255, 214, 10, 0.04) 0%, rgba(255, 122, 0, 0.02) 100%),
@@ -160,7 +152,6 @@ body {
   position: relative;
 }
 
-/* Headband — for badges */
 @utility headband {
   display: inline-flex;
   align-items: center;
@@ -174,7 +165,6 @@ body {
   letter-spacing: 0.15em;
 }
 
-/* Chakra text — glowing gold */
 @utility chakra-text {
   color: #ffd60a;
   text-shadow:
@@ -182,7 +172,6 @@ body {
     0 0 24px rgba(255, 122, 0, 0.4);
 }
 
-/* Rasengan text — glowing blue */
 @utility rasengan-text {
   color: #60a5fa;
   text-shadow:
@@ -190,7 +179,6 @@ body {
     0 0 24px rgba(30, 58, 138, 0.6);
 }
 
-/* Naruto gradient text */
 @utility naruto-gradient {
   background: linear-gradient(120deg, #ff7a00 0%, #ffd60a 50%, #ff7a00 100%);
   background-size: 200% auto;
@@ -200,7 +188,6 @@ body {
   animation: scroll-flicker 6s linear infinite;
 }
 
-/* Terminal/command text style */
 @utility cmd-text {
   font-family: var(--font-mono);
   color: #8a7d65;
@@ -208,7 +195,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* Dashed chakra divider */
 @utility chakra-divider {
   height: 1px;
   background: repeating-linear-gradient(
@@ -220,7 +206,6 @@ body {
   );
 }
 
-/* Corner cut (cyberpunk/ninja style) */
 @utility corner-cut {
   clip-path: polygon(
     12px 0,

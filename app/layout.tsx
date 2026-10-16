@@ -4,10 +4,11 @@ import {
   Noto_Sans_JP,
   Inter,
   JetBrains_Mono,
+  Permanent_Marker,
 } from "next/font/google";
 import "./globals.css";
 
-// ===== Fonts =====
+// ===== Existing fonts =====
 const russo = Russo_One({
   subsets: ["latin"],
   weight: "400",
@@ -36,13 +37,19 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-// ===== Metadata (browser tab title) =====
+// ✍️ NEW: Handwritten marker font (Reference pic এর মতো)
+const marker = Permanent_Marker({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-marker",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Portfolio — Naruto Theme",
   description: "Naruto-themed full stack developer portfolio",
 };
 
-// ===== Root layout =====
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${russo.variable} ${notoJp.variable} ${inter.variable} ${mono.variable}`}
+      className={`${russo.variable} ${notoJp.variable} ${inter.variable} ${mono.variable} ${marker.variable}`}
     >
       <body className="font-sans antialiased">{children}</body>
     </html>
